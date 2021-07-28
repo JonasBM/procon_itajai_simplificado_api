@@ -1,0 +1,11 @@
+{
+  "python.pythonPath": ".venv/bin/python3",
+  "python.autoComplete.extraPaths": [
+    ".venv/lib/python3.7/site-packages",
+    ".venv/lib64/python3.7/site-packages"
+  ],
+  "python.analysis.extraPaths": [
+    ".venv/lib/python3.7/site-packages",
+    ".venv/lib64/python3.7/site-packages"
+  ]
+}
