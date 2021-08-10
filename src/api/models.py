@@ -9,11 +9,13 @@ from django.dispatch import receiver
 def get_system_user():
     username_system = "Sistema"
     first_name = "Sistema"
-    user_sistema = User.objects.filter(username=username_system, first_name=first_name).first()
+    user_sistema = User.objects.filter(username=username_system).first()
     if user_sistema:
         return user_sistema
     else:
-        return User.objects.create(username=username_system, is_staff=True, is_active=False, is_superuser=True)
+        return User.objects.create(
+            username=username_system, first_name=first_name, is_staff=True, is_active=False, is_superuser=True
+        )
 
 
 class Profile(models.Model):
