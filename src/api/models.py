@@ -78,7 +78,7 @@ class Situcacao(models.Model):
 def auto_comment_on_situacao_save(sender, instance, created, update_fields, **kwargs):
     if created:
         _system_user = get_system_user()
-        _comentario = "Nova situação: " + instance.tipo_de_situacao.nome
+        _comentario = "Novo local: " + instance.tipo_de_situacao.nome
         for documento in instance.processo.documentos.all():
             ComentarioDocumento.objects.create(documento=documento, owner=_system_user, comentario=_comentario)
 
