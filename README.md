@@ -1,6 +1,7 @@
-# eventtracker_api
+# procon_simplificado_api
 
 ## Process manage for municipal consumer protection body
+
 A Backend python project, using django and django rest framework to build the api, connected with a postgresql database.
 
 See the frontend project ([procon_simplificado_react](https://github.com/JonasBM/procon_simplificado_react))
@@ -8,9 +9,11 @@ See the frontend project ([procon_simplificado_react](https://github.com/JonasBM
 ## Running the docker
 
 ### Building
+
 Use the Dockerfile to build the image.
 
 ### Ports
+
 Expose the port 8000.
 
 ### Volumes
@@ -34,7 +37,9 @@ PG_DB_NAME event_tracker | changeme | no | Name of the database
 CORS_ALLOWED_ORIGINS |  | no | Endpoint of your frontend. To allow communication between diferent domains or subdomains.<br /> Can be multiple addresses separated with a comma (https://domainone.com,https://domaintwo.com)
 
 ### Before start
+
 Connect to the container, and create a superuser.
+
 ```
 python /code/manage.py createsuperuser
 ```
