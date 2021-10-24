@@ -38,8 +38,14 @@ CORS_ALLOWED_ORIGINS |  | no | Endpoint of your frontend. To allow communication
 
 ### Before start
 
-Connect to the container, and create a superuser.
-
+Connect to the api container, and create a superuser.
 ```
 python /code/manage.py createsuperuser
+```
+
+Connect to the database container, and create the database.
+```
+psql -U user
+
+CREATE DATABASE name;
 ```
