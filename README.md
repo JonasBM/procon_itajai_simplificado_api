@@ -1,4 +1,4 @@
-# eventtracker_api
+# procon_simplificado_api
 
 ## Process manage for municipal consumer protection body
 A Backend python project, using django and django rest framework to build the api, connected with a postgresql database.
