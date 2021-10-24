@@ -13,9 +13,12 @@ def get_system_user():
     if user_sistema:
         return user_sistema
     else:
-        return User.objects.create(
-            username=username_system, first_name=first_name, is_staff=True, is_active=False, is_superuser=True
+        return User.objects.create_user(
+            username_system, None, None, first_name=first_name, is_staff=True, is_active=False, is_superuser=True
         )
+        # return User.objects.create(
+        #     username=username_system, first_name=first_name, is_staff=True, is_active=False, is_superuser=True
+        # )
 
 
 class Profile(models.Model):
@@ -78,7 +81,7 @@ class Situcacao(models.Model):
 def auto_comment_on_situacao_save(sender, instance, created, update_fields, **kwargs):
     if created:
         _system_user = get_system_user()
-        _comentario = "Novo local: " + instance.tipo_de_situacao.nome
+        _comentario = "Nova Situação: " + instance.tipo_de_situacao.nome
         for documento in instance.processo.documentos.all():
             ComentarioDocumento.objects.create(documento=documento, owner=_system_user, comentario=_comentario)
 
